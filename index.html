@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>CheckoutProof — Conformité EAA pour boutiques e-commerce | Audit & Monitoring</title>
+  <meta name="description" content="Auditez et surveillez la conformité accessibilité de vos boutiques WooCommerce, Shopify et PrestaShop. European Accessibility Act applicable depuis juin 2025. Solution white-label pour agences." />
+  <meta name="keywords" content="conformité accessibilité e-commerce, European Accessibility Act, audit EAA WooCommerce, conformité Shopify, audit accessibilité PrestaShop, agence e-commerce conformité" />
+  <link rel="canonical" href="https://checkoutproof.io" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CheckoutProof — Conformité EAA pour boutiques e-commerce" />
+  <meta property="og:description" content="Auditez, corrigez et surveillez la conformité accessibilité de vos boutiques. Solution white-label pour agences e-commerce." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://checkoutproof.io" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CheckoutProof — Conformité EAA e-commerce" />
+  <meta name="twitter:description" content="Audit d'accessibilité automatisé pour WooCommerce, Shopify, PrestaShop. White-label agences." />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CheckoutProof",
+    "applicationCategory": "BusinessApplication",
+    "description": "Outil d'audit et de monitoring de conformité accessibilité pour boutiques e-commerce européennes.",
+    "offers": {
+      "@type": "Offer",
+      "price": "79",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #F8F7F4;
+      --bg-white:  #FFFFFF;
+      --bg-subtle: #F1F0ED;
+      --border:    #E4E2DC;
+      --text:      #111110;
+      --text-2:    #6B6860;
+      --text-3:    #A09E99;
+      --blue:      #1B4FD8;
+      --blue-dark: #1340B8;
+      --blue-bg:   #EEF2FF;
+      --red:       #C8291A;
+      --red-bg:    #FEF2F0;
+      --green:     #166534;
+      --green-bg:  #F0FDF4;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,.09), 0 2px 8px rgba(0,0,0,.05);
+      --radius:    10px;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'Figtree', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(248,247,244,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 32px;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 600;
+      color: var(--text); letter-spacing: -.2px;
+      flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--blue); }
+    .nav-links {
+      display: flex; align-items: center; gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px; font-weight: 500;
+      color: var(--text-2); padding: 6px 12px;
+      border-radius: 6px; transition: color .15s, background .15s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--bg-subtle); }
+    .nav-cta {
+      display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: var(--radius); font-family: var(--font-body); font-weight: 600; cursor: pointer; transition: all .15s; border: none; white-space: nowrap; }
+    .btn-sm { font-size: 13px; padding: 8px 16px; }
+    .btn-md { font-size: 14px; padding: 11px 22px; }
+    .btn-lg { font-size: 15px; padding: 14px 28px; }
+    .btn-ghost { background: transparent; color: var(--text-2); }
+    .btn-ghost:hover { background: var(--bg-subtle); color: var(--text); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: #C0BDB7; background: var(--bg-white); box-shadow: var(--shadow-sm); }
+    .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 1px 3px rgba(27,79,216,.25), inset 0 1px 0 rgba(255,255,255,.08); }
+    .btn-primary:hover { background: var(--blue-dark); box-shadow: 0 4px 12px rgba(27,79,216,.3); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero {
+      max-width: 1160px; margin: 0 auto;
+      padding: 88px 32px 80px;
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 64px; align-items: start;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: .6px;
+      text-transform: uppercase; color: var(--blue);
+      background: var(--blue-bg); padding: 5px 12px;
+      border-radius: 100px; margin-bottom: 24px;
+      border: 1px solid #C7D7FA;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--blue); border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 4.5vw, 58px);
+      font-weight: 400; line-height: 1.08;
+      letter-spacing: -.02em; color: var(--text);
+      margin-bottom: 24px;
+    }
+    h1 em { font-style: italic; color: var(--blue); }
+    .hero-sub {
+      font-size: 17px; color: var(--text-2);
+      line-height: 1.7; max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-trust {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--text-3);
+    }
+    .hero-trust-dot { width: 3px; height: 3px; background: var(--text-3); border-radius: 50%; }
+
+    /* Scan widget */
+    .scan-widget {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: relative;
+      top: 0;
+    }
+    .scan-widget-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .scan-widget-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .scan-widget-sub { font-size: 12px; color: var(--text-3); }
+    .scan-form { padding: 20px 24px; }
+    .scan-input-wrap {
+      display: flex; border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; margin-bottom: 12px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .scan-input-wrap:focus-within {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(27,79,216,.12);
+    }
+    .scan-input {
+      flex: 1; padding: 11px 14px; border: none; outline: none;
+      font-family: var(--font-body); font-size: 14px;
+      background: transparent; color: var(--text);
+    }
+    .scan-input::placeholder { color: var(--text-3); }
+    .scan-submit {
+      padding: 11px 18px; background: var(--blue); color: #fff;
+      border: none; font-family: var(--font-body); font-size: 13px;
+      font-weight: 600; cursor: pointer; transition: background .15s;
+      white-space: nowrap;
+    }
+    .scan-submit:hover { background: var(--blue-dark); }
+    .scan-submit:disabled { opacity: .6; cursor: wait; }
+    .scan-note { font-size: 11px; color: var(--text-3); }
+    .scan-progress {
+      padding: 0 24px 20px;
+      display: none;
+    }
+    .scan-progress.active { display: block; }
+    .progress-label { font-size: 12px; color: var(--text-2); margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .progress-bar { height: 4px; background: var(--bg-subtle); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--blue); border-radius: 2px; width: 0; transition: width .2s ease; }
+    .scan-results { padding: 0 24px 20px; display: none; }
+    .scan-results.active { display: block; }
+    .result-warning {
+      background: var(--red-bg); border: 1px solid #FCCAC4;
+      border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;
+      font-size: 13px; color: var(--red); font-weight: 500;
+    }
+    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+    .result-card {
+      background: var(--bg-subtle); border-radius: 8px; padding: 12px 14px;
+    }
+    .result-card-label { font-size: 10px; text-transform: uppercase; letter-spacing: .6px; color: var(--text-3); margin-bottom: 4px; }
+    .result-card-value { font-family: var(--font-display); font-size: 24px; font-weight: 400; line-height: 1; }
+    .result-card-value.bad { color: var(--red); }
+    .result-card-value.warn { color: #92400E; }
+    .result-cta { font-size: 12px; color: var(--text-3); text-align: center; }
+    .result-cta a { color: var(--blue); font-weight: 600; }
+
+    /* ─── LOGOS ───────────────────────────────────────── */
+    .logos-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-white);
+      padding: 20px 32px;
+    }
+    .logos-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+    }
+    .logos-label { font-size: 12px; color: var(--text-3); font-weight: 500; white-space: nowrap; }
+    .logos-list { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
+    .logo-pill {
+      font-size: 13px; font-weight: 600; color: var(--text-3);
+      display: flex; align-items: center; gap: 6px;
+      letter-spacing: -.1px;
+    }
+
+    /* ─── STATS ───────────────────────────────────────── */
+    .stats { max-width: 1160px; margin: 0 auto; padding: 72px 32px; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden;
+    }
+    .stat-cell {
+      background: var(--bg-white); padding: 32px 28px;
+    }
+    .stat-number {
+      font-family: var(--font-display); font-size: 40px;
+      font-weight: 400; line-height: 1; color: var(--text);
+      margin-bottom: 8px; letter-spacing: -.02em;
+    }
+    .stat-number span { color: var(--blue); }
+    .stat-desc { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+    /* ─── SECTION SHARED ──────────────────────────────── */
+    .section { padding: 80px 32px; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px; font-weight: 600; letter-spacing: .7px;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 14px;
+    }
+    h2 {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: clamp(30px, 3.5vw, 44px);
+      line-height: 1.1; letter-spacing: -.02em;
+      color: var(--text); margin-bottom: 16px;
+    }
+    h2 em { font-style: italic; color: var(--blue); }
+    .section-sub { font-size: 16px; color: var(--text-2); max-width: 520px; line-height: 1.7; }
+
+    /* ─── HOW IT WORKS ────────────────────────────────── */
+    .how { background: var(--bg-white); }
+    .how-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 40px; margin-top: 56px;
+    }
+    .how-step { }
+    .how-num {
+      font-family: var(--font-display); font-size: 13px; font-weight: 600;
+      color: var(--blue); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .how-num::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .how-step:last-child .how-num::after { display: none; }
+    .how-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg-subtle);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; margin-bottom: 16px;
+    }
+    .how-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+    .how-desc { font-size: 14px; color: var(--text-2); line-height: 1.65; }
+
+    /* ─── AGENCY ──────────────────────────────────────── */
+    .agency-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center; margin-top: 56px;
+    }
+    .agency-body h3 {
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      line-height: 1.2; margin-bottom: 16px; color: var(--text);
+    }
+    .agency-body p { font-size: 15px; color: var(--text-2); line-height: 1.7; margin-bottom: 24px; }
+    .agency-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .agency-features li {
+      font-size: 14px; color: var(--text-2); display: flex; align-items: flex-start; gap: 10px;
+    }
+    .agency-features li::before {
+      content: '✓'; color: var(--green); font-weight: 700; font-size: 13px;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .agency-calc {
+      background: var(--bg-white); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md);
+    }
+    .calc-header {
+      padding: 24px 28px; border-bottom: 1px solid var(--border);
+    }
+    .calc-header-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .calc-header-sub { font-size: 12px; color: var(--text-3); }
+    .calc-body { padding: 20px 28px; }
+    .calc-slider-row { margin-bottom: 20px; }
+    .calc-slider-label {
+      display: flex; justify-content: space-between;
+      font-size: 13px; color: var(--text-2); margin-bottom: 8px;
+    }
+    .calc-slider-label strong { color: var(--text); font-weight: 600; }
+    input[type=range] {
+      width: 100%; accent-color: var(--blue); cursor: pointer; margin-bottom: 4px;
+    }
+    .calc-rows { display: flex; flex-direction: column; gap: 2px; }
+    .calc-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 14px; background: var(--bg-subtle); border-radius: 6px;
+      font-size: 13px;
+    }
+    .calc-row span:first-child { color: var(--text-2); }
+    .calc-row span:last-child { font-weight: 600; color: var(--text); }
+    .calc-total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 14px 0; border-top: 1px solid var(--border); margin-top: 12px;
+    }
+    .calc-total-row span:first-child { font-size: 14px; font-weight: 600; color: var(--text); }
+    .calc-total-row span:last-child {
+      font-family: var(--font-display); font-size: 28px;
+      font-weight: 400; color: var(--blue);
+    }
+
+    /* ─── PRICING ─────────────────────────────────────── */
+    .pricing { background: var(--bg-white); }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 56px;
+    }
+    .pricing-card {
+      border: 1px solid var(--border); border-radius: 16px;
+      padding: 32px 28px; background: var(--bg-white);
+      position: relative; transition: box-shadow .2s, border-color .2s;
+    }
+    .pricing-card:hover { box-shadow: var(--shadow-md); border-color: #C0BDB7; }
+    .pricing-card.featured {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px var(--blue), var(--shadow-md);
+    }
+    .pricing-card.featured:hover { box-shadow: 0 0 0 1px var(--blue), var(--shadow-lg); }
+    .featured-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: #fff;
+      font-size: 10px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .plan-name { font-size: 13px; font-weight: 600; color: var(--text-2); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 20px; }
+    .plan-price-row { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 6px; }
+    .plan-currency { font-size: 18px; font-weight: 600; color: var(--text); align-self: flex-start; margin-top: 10px; }
+    .plan-price { font-family: var(--font-display); font-size: 52px; font-weight: 400; line-height: 1; color: var(--text); letter-spacing: -.02em; }
+    .plan-period { font-size: 13px; color: var(--text-3); margin-bottom: 4px; }
+    .plan-desc { font-size: 13px; color: var(--text-2); margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .plan-features li { font-size: 14px; color: var(--text-2); display: flex; gap: 10px; align-items: flex-start; }
+    .plan-features li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+    .btn-full { width: 100%; }
+
+    /* ─── LEGAL ───────────────────────────────────────── */
+    .legal-banner {
+      max-width: 1160px; margin: 0 auto;
+      padding: 0 32px 72px;
+    }
+    .legal-inner {
+      background: var(--bg-white); border: 1px solid #FCCAC4;
+      border-radius: 12px; padding: 20px 24px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .legal-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .legal-text { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+    .legal-text strong { color: var(--red); }
+
+    /* ─── CTA BAND ────────────────────────────────────── */
+    .cta-band {
+      background: var(--text); padding: 80px 32px;
+    }
+    .cta-inner {
+      max-width: 700px; margin: 0 auto; text-align: center;
+    }
+    .cta-inner h2 { color: #fff; }
+    .cta-inner h2 em { color: #93AAEF; }
+    .cta-sub { font-size: 16px; color: rgba(255,255,255,.55); margin: 16px auto 36px; max-width: 480px; line-height: 1.7; }
+    .cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .btn-white { background: #fff; color: var(--text); }
+    .btn-white:hover { background: #F3F4F6; box-shadow: var(--shadow-sm); }
+    .btn-dark-outline { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2); }
+    .btn-dark-outline:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      padding: 32px;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-family: var(--font-display); font-size: 16px; color: var(--text-2); }
+    .footer-logo span { color: var(--blue); }
+    .footer-copy { font-size: 13px; color: var(--text-3); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: var(--text-3); transition: color .15s; }
+    .footer-links a:hover { color: var(--text-2); }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; gap: 48px; }
+      .scan-widget { max-width: 480px; }
+      .how-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .agency-grid { grid-template-columns: 1fr; gap: 48px; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-inner { padding: 0 20px; }
+      .hero { padding: 56px 20px 48px; }
+      .section { padding: 56px 20px; }
+      .how-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .logos-bar { padding: 16px 20px; }
+      .legal-banner { padding: 0 20px 48px; }
+      h1 { font-size: 36px; }
+    }
+
+    /* ─── ANIMATIONS ──────────────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">Checkout<span>Proof</span></a>
+    <ul class="nav-links">
+      <li><a href="#how">Fonctionnement</a></li>
+      <li><a href="#agencies">Agences</a></li>
+      <li><a href="#pricing">Tarifs</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#pricing" class="btn btn-sm btn-ghost">Se connecter</a>
+      <a href="#scan" class="btn btn-sm btn-primary">Audit gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero" id="scan">
+    <div class="hero-left fade-up">
+      <div class="hero-eyebrow">European Accessibility Act — En vigueur depuis juin 2025</div>
+      <h1>Votre boutique<br>passe-t-elle<br>le test <em>EAA&nbsp;?</em></h1>
+      <p class="hero-sub">
+        51 erreurs d'accessibilité en moyenne par boutique e-commerce. 
+        CheckoutProof audite, surveille et prouve votre conformité — automatiquement.
+      </p>
+      <div class="hero-actions">
+        <a href="#scan" class="btn btn-lg btn-primary">Lancer un audit gratuit</a>
+        <a href="#agencies" class="btn btn-lg btn-outline">Voir la solution agences →</a>
+      </div>
+      <div class="hero-trust">
+        <span>Aucune CB requise</span>
+        <span class="hero-trust-dot"></span>
+        <span>Résultat en 60 secondes</span>
+        <span class="hero-trust-dot"></span>
+        <span>WooCommerce · Shopify · PrestaShop</span>
+      </div>
+    </div>
+
+    <div class="scan-widget fade-up" style="animation-delay:.1s">
+      <div class="scan-widget-header">
+        <div class="scan-widget-title">Audit d'accessibilité gratuit</div>
+        <div class="scan-widget-sub">Entrez l'URL de votre boutique pour obtenir un score EAA instantané</div>
+      </div>
+      <div class="scan-form">
+        <div class="scan-input-wrap">
+          <input class="scan-input" id="urlInput" type="url" placeholder="https://votre-boutique.com" />
+          <button class="scan-submit" id="scanBtn" onclick="startScan()">Analyser →</button>
+        </div>
+        <div class="scan-note">6 pages auditées : accueil, catégorie, produit, panier, checkout, compte</div>
+      </div>
+      <div class="scan-progress" id="scanProgress">
+        <div class="progress-label">
+          <span id="progressLabel">Crawl des pages en cours…</span>
+          <span id="progressPct">0%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div class="scan-results" id="scanResults">
+        <div class="result-warning">⚠ Boutique non conforme — corrections requises avant inspection</div>
+        <div class="result-grid">
+          <div class="result-card">
+            <div class="result-card-label">Score global</div>
+            <div class="result-card-value bad">38<span style="font-size:18px">/100</span></div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Erreurs critiques</div>
+            <div class="result-card-value bad">24</div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Score checkout</div>
+            <div class="result-card-value warn">51<span style="font-size:18px">/100</span></div>
+          </div>
+          <div class="result-card">
+            <div class="result-card-label">Conformité EAA</div>
+            <div class="result-card-value bad" style="font-size:16px;margin-top:4px">Non conforme</div>
+          </div>
+        </div>
+        <div class="result-cta">Rapport complet disponible après inscription — <a href="#pricing">gratuit 14 jours</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-bar">
+  <div class="logos-inner">
+    <span class="logos-label">Compatible avec</span>
+    <div class="logos-list">
+      <span class="logo-pill">🟣 WooCommerce</span>
+      <span class="logo-pill">🟢 Shopify</span>
+      <span class="logo-pill">🔵 PrestaShop</span>
+      <span class="logo-pill">⚫ Magento</span>
+      <span class="logo-pill">🟠 Wix eCommerce</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section>
+  <div class="stats">
+    <div class="stats-grid fade-up">
+      <div class="stat-cell">
+        <div class="stat-number">50<span>.9M</span></div>
+        <div class="stat-desc">erreurs d'accessibilité détectées sur 1 million de sites analysés (WebAIM 2025)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number"><span>28</span> juin</div>
+        <div class="stat-desc">2025 — date d'entrée en vigueur de l'EAA pour le commerce en ligne européen</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">4<span>M+</span></div>
+        <div class="stat-desc">boutiques WooCommerce dans le scope de la directive, auxquelles s'ajoutent 250 000 sites PrestaShop</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">51</div>
+        <div class="stat-desc">erreurs détectables en moyenne par page — dont la majorité sur le checkout et les formulaires</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how" id="how">
+  <div class="section-inner">
+    <div class="section-label fade-up">Fonctionnement</div>
+    <h2 class="fade-up">De l'audit à la <em>preuve</em> de conformité</h2>
+    <p class="section-sub fade-up">Pas de widget magique. Un audit réel des pages qui comptent, des correctifs actionnables et un monitoring qui détecte les régressions avant vos clients.</p>
+    <div class="how-grid">
+      <div class="how-step fade-up">
+        <div class="how-num">01</div>
+        <div class="how-icon">🔍</div>
+        <div class="how-title">Scan automatique</div>
+        <div class="how-desc">On crawle vos 6 pages critiques — accueil, catégorie, fiche produit, panier, checkout, compte — avec Playwright et axe-core.</div>
+      </div>
+      <div class="how-step fade-up" style="animation-delay:.08s">
+        <div class="how-num">02</div>
+        <div class="how-icon">📊</div>
+        <div class="how-title">Score par page</div>
+        <div class="how-desc">Chaque page reçoit un score EAA avec gravité et capture annotée. Les erreurs sont regroupées par type pour faciliter les corrections.</div>
+      </div>
+      <div class="how-step fade-up" style="animation-delay:.16s">
+        <div class="how-num">03</div>
+        <div class="how-icon">📋</div>
+        <div class="how-title">Tickets actionnables</div>
+        <div class="how-desc">Le rapport contient des tickets prêts à envoyer à votre développeur. Plus besoin d'interpréter — chaque erreur a sa correction documentée.</div>
+      </div>
+      <div class="how-step fade-up" style="animation-delay:.24s">
+        <div class="how-num">04</div>
+        <div class="how-icon">🔔</div>
+        <div class="how-title">Surveillance continue</div>
+        <div class="how-desc">Chaque mise à jour de thème ou plugin peut tout casser. On détecte les régressions et vous alertez avant qu'un client ou une autorité ne le fasse.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENCY -->
+<section class="section" id="agencies">
+  <div class="section-inner">
+    <div class="agency-grid">
+      <div class="agency-body fade-up">
+        <div class="section-label">Solution agences</div>
+        <h2>Un dashboard.<br><em>Toutes vos boutiques.</em></h2>
+        <p>Proposez la conformité EAA comme service récurrent à vos clients e-commerce. Rapports sous votre marque, alertes temps réel, facturation unifiée.</p>
+        <ul class="agency-features">
+          <li>Dashboard white-label à votre marque</li>
+          <li>Gestion centralisée de 10 boutiques et plus</li>
+          <li>Rapports PDF prêts à envoyer à vos clients</li>
+          <li>Alertes automatiques après chaque mise à jour</li>
+          <li>Accès API pour intégration dans votre workflow</li>
+          <li>Support prioritaire et onboarding dédié</li>
+        </ul>
+        <a href="#pricing" class="btn btn-md btn-primary">Voir le plan Agence →</a>
+      </div>
+      <div class="agency-calc fade-up" style="animation-delay:.1s">
+        <div class="calc-header">
+          <div class="calc-header-title">Calculez votre marge nette</div>
+          <div class="calc-header-sub">Ajustez le nombre de boutiques clientes</div>
+        </div>
+        <div class="calc-body">
+          <div class="calc-slider-row">
+            <div class="calc-slider-label">
+              <span>Boutiques gérées</span>
+              <strong id="sliderVal">20 boutiques</strong>
+            </div>
+            <input type="range" id="shopSlider" min="5" max="60" value="20" step="5" oninput="updateCalc()" />
+          </div>
+          <div class="calc-rows">
+            <div class="calc-row">
+              <span>Votre coût CheckoutProof</span>
+              <span id="calcCost">299 €/mois</span>
+            </div>
+            <div class="calc-row">
+              <span>Ce que vous facturez (49 €/boutique)</span>
+              <span id="calcRevenue">980 €/mois</span>
+            </div>
+          </div>
+          <div class="calc-total-row">
+            <span>Marge nette mensuelle</span>
+            <span id="calcMargin">681 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+  <div class="section-inner">
+    <div class="section-label fade-up">Tarifs</div>
+    <h2 class="fade-up">Simple et <em>prévisible</em></h2>
+    <p class="section-sub fade-up">14 jours d'essai gratuit sur tous les plans. Résiliable à tout moment.</p>
+    <div class="pricing-grid">
+
+      <div class="pricing-card fade-up">
+        <div class="plan-name">Boutique</div>
+        <div class="plan-price-row">
+          <span class="plan-currency">€</span>
+          <span class="plan-price">79</span>
+        </div>
+        <div class="plan-period">par mois · par boutique</div>
+        <div class="plan-desc">Pour un marchand indépendant qui veut être conforme et le prouver.</div>
+        <ul class="plan-features">
+          <li>Audit des 6 pages critiques</li>
+          <li>Score EAA détaillé par page</li>
+          <li>Monitoring mensuel automatique</li>
+          <li>Alertes régressions par email</li>
+          <li>Rapport PDF exportable</li>
+          <li>Tickets correctifs inclus</li>
+        </ul>
+        <a href="#" class="btn btn-md btn-outline btn-full">Démarrer — 14 jours gratuits</a>
+      </div>
+
+      <div class="pricing-card featured fade-up" style="animation-delay:.08s">
+        <div class="featured-badge">Le plus populaire</div>
+        <div class="plan-name">Agence</div>
+        <div class="plan-price-row">
+          <span class="plan-currency">€</span>
+          <span class="plan-price">299</span>
+        </div>
+        <div class="plan-period">par mois · jusqu'à 10 boutiques</div>
+        <div class="plan-desc">Pour les agences e-commerce qui gèrent plusieurs boutiques clientes.</div>
+        <ul class="plan-features">
+          <li>Tout le plan Boutique × 10</li>
+          <li>Dashboard white-label à votre marque</li>
+          <li>Rapports PDF à votre logo</li>
+          <li>Alertes temps réel</li>
+          <li>Accès API complet</li>
+          <li>Support prioritaire et onboarding</li>
+        </ul>
+        <a href="#" class="btn btn-md btn-primary btn-full">Demander une démo</a>
+      </div>
+
+      <div class="pricing-card fade-up" style="animation-delay:.16s">
+        <div class="plan-name">Audit ponctuel</div>
+        <div class="plan-price-row">
+          <span class="plan-currency">€</span>
+          <span class="plan-price">490</span>
+        </div>
+        <div class="plan-period">paiement unique</div>
+        <div class="plan-desc">Rapport approfondi avec vérification humaine. Preuve d'effort légale.</div>
+        <ul class="plan-features">
+          <li>Audit complet avec vérification humaine</li>
+          <li>Rapport détaillé 30+ pages</li>
+          <li>Tickets de correction priorisés</li>
+          <li>Document de preuve d'effort</li>
+          <li>Appel de restitution 1h inclus</li>
+        </ul>
+        <a href="#" class="btn btn-md btn-outline btn-full">Commander un audit</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL BANNER -->
+<div class="legal-banner">
+  <div class="legal-inner">
+    <span class="legal-icon">⚖️</span>
+    <div class="legal-text">
+      <strong>European Accessibility Act — applicable depuis le 28 juin 2025.</strong> Les boutiques e-commerce 
+      dépassant les seuils réglementaires s'exposent à des sanctions administratives en cas de non-conformité. 
+      Les microentreprises de services sont exemptées, mais pas les marchands en ligne au-delà du seuil légal.
+    </div>
+  </div>
+</div>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-inner fade-up">
+    <h2>Prêt à sécuriser la <em>conformité</em><br>de vos boutiques&nbsp;?</h2>
+    <p class="cta-sub">Rejoignez les agences e-commerce qui font de la conformité EAA un avantage compétitif — pas une contrainte.</p>
+    <div class="cta-actions">
+      <a href="#scan" class="btn btn-lg btn-white">Lancer un audit gratuit</a>
+      <a href="#agencies" class="btn btn-lg btn-dark-outline">Voir la solution agences</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Checkout<span>Proof</span></span>
+    <span class="footer-copy">© 2025 CheckoutProof. Tous droits réservés.</span>
+    <div class="footer-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Confidentialité</a>
+      <a href="#">Documentation API</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scan simulation
+  function startScan() {
+    const url = document.getElementById('urlInput').value.trim();
+    if (!url) return;
+    const btn = document.getElementById('scanBtn');
+    const progress = document.getElementById('scanProgress');
+    const results = document.getElementById('scanResults');
+    const fill = document.getElementById('progressFill');
+    const label = document.getElementById('progressLabel');
+    const pct = document.getElementById('progressPct');
+
+    btn.disabled = true;
+    btn.textContent = 'Analyse…';
+    progress.classList.add('active');
+    results.classList.remove('active');
+
+    const steps = [
+      [15, 'Crawl des 6 pages critiques…'],
+      [38, 'Exécution de axe-core…'],
+      [62, 'Calcul des scores EAA…'],
+      [81, 'Génération du rapport…'],
+      [100, 'Analyse terminée'],
+    ];
+    let i = 0;
+    const tick = () => {
+      if (i >= steps.length) {
+        setTimeout(() => {
+          progress.classList.remove('active');
+          results.classList.add('active');
+          btn.disabled = false;
+          btn.textContent = 'Analyser →';
+        }, 400);
+        return;
+      }
+      const [p, l] = steps[i++];
+      fill.style.width = p + '%';
+      label.textContent = l;
+      pct.textContent = p + '%';
+      setTimeout(tick, 520);
+    };
+    tick();
+  }
+  document.getElementById('urlInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') startScan();
+  });
+
+  // Agency calculator
+  function updateCalc() {
+    const n = parseInt(document.getElementById('shopSlider').value);
+    const cost = 299;
+    const revenue = n * 49;
+    const margin = revenue - cost;
+    document.getElementById('sliderVal').textContent = n + ' boutiques';
+    document.getElementById('calcCost').textContent = cost + ' €/mois';
+    document.getElementById('calcRevenue').textContent = revenue.toLocaleString('fr-FR') + ' €/mois';
+    document.getElementById('calcMargin').textContent = margin.toLocaleString('fr-FR') + ' €';
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
