@@ -3,686 +3,586 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
   <title>CheckoutProof — Conformité EAA pour boutiques e-commerce | Audit & Monitoring</title>
-  <meta name="description" content="Auditez et surveillez la conformité accessibilité de vos boutiques WooCommerce, Shopify et PrestaShop. European Accessibility Act applicable depuis juin 2025. Solution white-label pour agences." />
+  <meta name="description" content="Auditez et surveillez la conformité accessibilité de vos boutiques WooCommerce, Shopify et PrestaShop. European Accessibility Act applicable depuis juin 2025. Solution white-label pour agences e-commerce." />
   <meta name="keywords" content="conformité accessibilité e-commerce, European Accessibility Act, audit EAA WooCommerce, conformité Shopify, audit accessibilité PrestaShop, agence e-commerce conformité" />
-  <link rel="canonical" href="https://checkoutproof.io" />
-
-  <!-- Open Graph -->
+  <link rel="canonical" href="https://checkoutproof.fr" />
   <meta property="og:title" content="CheckoutProof — Conformité EAA pour boutiques e-commerce" />
-  <meta property="og:description" content="Auditez, corrigez et surveillez la conformité accessibilité de vos boutiques. Solution white-label pour agences e-commerce." />
+  <meta property="og:description" content="Auditez, corrigez et surveillez la conformité accessibilité de vos boutiques e-commerce. Solution white-label pour agences." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://checkoutproof.io" />
+  <meta property="og:url" content="https://checkoutproof.fr" />
   <meta property="og:locale" content="fr_FR" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CheckoutProof — Conformité EAA e-commerce" />
-  <meta name="twitter:description" content="Audit d'accessibilité automatisé pour WooCommerce, Shopify, PrestaShop. White-label agences." />
-
-  <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "CheckoutProof",
-    "applicationCategory": "BusinessApplication",
-    "description": "Outil d'audit et de monitoring de conformité accessibilité pour boutiques e-commerce européennes.",
-    "offers": {
-      "@type": "Offer",
-      "price": "79",
-      "priceCurrency": "EUR"
-    }
-  }
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CheckoutProof","applicationCategory":"BusinessApplication","description":"Outil d'audit et de monitoring de conformité accessibilité pour boutiques e-commerce européennes.","offers":{"@type":"Offer","price":"79","priceCurrency":"EUR"}}
   </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg:        #F8F7F4;
-      --bg-white:  #FFFFFF;
-      --bg-subtle: #F1F0ED;
-      --border:    #E4E2DC;
-      --text:      #111110;
-      --text-2:    #6B6860;
-      --text-3:    #A09E99;
-      --blue:      #1B4FD8;
-      --blue-dark: #1340B8;
-      --blue-bg:   #EEF2FF;
-      --red:       #C8291A;
-      --red-bg:    #FEF2F0;
-      --green:     #166534;
-      --green-bg:  #F0FDF4;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-      --shadow-md: 0 4px 16px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,.09), 0 2px 8px rgba(0,0,0,.05);
-      --radius:    10px;
-      --font-display: 'Fraunces', Georgia, serif;
-      --font-body:    'Figtree', -apple-system, sans-serif;
+      --bg:         #F7F6F3;
+      --bg-white:   #FFFFFF;
+      --bg-subtle:  #F0EFE9;
+      --border:     #E3E1DA;
+      --border-2:   #D4D2CB;
+      --text:       #111110;
+      --text-2:     #6A6860;
+      --text-3:     #A09D98;
+      --blue:       #1A4ED8;
+      --blue-dark:  #1340B5;
+      --blue-light: #EEF2FF;
+      --blue-border:#C7D5F8;
+      --red:        #B91C1C;
+      --red-bg:     #FEF2F2;
+      --red-border: #FCA5A5;
+      --amber:      #92400E;
+      --amber-bg:   #FFFBEB;
+      --green:      #15803D;
+      --sh-sm:      0 1px 2px rgba(0,0,0,.05);
+      --sh-md:      0 4px 12px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+      --sh-lg:      0 16px 48px rgba(0,0,0,.09), 0 4px 12px rgba(0,0,0,.05);
+      --r:          10px;
+      --ff-display: 'Fraunces', Georgia, serif;
+      --ff-body:    'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
-    }
-    img { max-width: 100%; display: block; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
+    button { font-family: var(--ff-body); cursor: pointer; }
 
-    /* ─── NAV ─────────────────────────────────────────── */
+    /* ── UTILS ── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    .fade { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+    .fade.in { opacity: 1; transform: none; }
+
+    /* ── NAV ── */
     nav {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(248,247,244,.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,246,243,.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
-      max-width: 1160px; margin: 0 auto;
-      padding: 0 32px;
-      height: 60px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 24px;
+      max-width: 1160px; margin: 0 auto; padding: 0 32px;
+      height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
     }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 18px; font-weight: 600;
-      color: var(--text); letter-spacing: -.2px;
-      flex-shrink: 0;
-    }
-    .nav-logo span { color: var(--blue); }
-    .nav-links {
-      display: flex; align-items: center; gap: 6px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 14px; font-weight: 500;
-      color: var(--text-2); padding: 6px 12px;
-      border-radius: 6px; transition: color .15s, background .15s;
-    }
+    .nav-logo { font-family: var(--ff-display); font-size: 17px; font-weight: 400; color: var(--text); letter-spacing: -.2px; flex-shrink: 0; }
+    .nav-logo strong { color: var(--blue); font-weight: 400; }
+    .nav-links { display: flex; align-items: center; list-style: none; gap: 2px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-2); padding: 6px 12px; border-radius: 7px; transition: color .12s, background .12s; }
     .nav-links a:hover { color: var(--text); background: var(--bg-subtle); }
-    .nav-cta {
-      display: flex; align-items: center; gap: 8px; flex-shrink: 0;
-    }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: var(--radius); font-family: var(--font-body); font-weight: 600; cursor: pointer; transition: all .15s; border: none; white-space: nowrap; }
-    .btn-sm { font-size: 13px; padding: 8px 16px; }
-    .btn-md { font-size: 14px; padding: 11px 22px; }
-    .btn-lg { font-size: 15px; padding: 14px 28px; }
-    .btn-ghost { background: transparent; color: var(--text-2); }
+    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: var(--r); font-weight: 600; transition: all .14s; border: 1px solid transparent; white-space: nowrap; text-decoration: none; }
+    .btn-sm  { font-size: 13px; padding: 7px 14px; }
+    .btn-md  { font-size: 14px; padding: 10px 20px; }
+    .btn-lg  { font-size: 15px; padding: 13px 26px; }
+    .btn-xl  { font-size: 15px; padding: 15px 30px; }
+    .btn-ghost { background: transparent; color: var(--text-2); border-color: transparent; }
     .btn-ghost:hover { background: var(--bg-subtle); color: var(--text); }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
-    .btn-outline:hover { border-color: #C0BDB7; background: var(--bg-white); box-shadow: var(--shadow-sm); }
-    .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 1px 3px rgba(27,79,216,.25), inset 0 1px 0 rgba(255,255,255,.08); }
-    .btn-primary:hover { background: var(--blue-dark); box-shadow: 0 4px 12px rgba(27,79,216,.3); transform: translateY(-1px); }
-    .btn-primary:active { transform: translateY(0); }
-
-    /* ─── HERO ────────────────────────────────────────── */
-    .hero {
-      max-width: 1160px; margin: 0 auto;
-      padding: 88px 32px 80px;
-      display: grid; grid-template-columns: 1fr 420px;
-      gap: 64px; align-items: start;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 12px; font-weight: 600; letter-spacing: .6px;
-      text-transform: uppercase; color: var(--blue);
-      background: var(--blue-bg); padding: 5px 12px;
-      border-radius: 100px; margin-bottom: 24px;
-      border: 1px solid #C7D7FA;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--blue); border-radius: 50%;
-      animation: blink 2s ease-in-out infinite;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-    h1 {
-      font-family: var(--font-display);
-      font-size: clamp(40px, 4.5vw, 58px);
-      font-weight: 400; line-height: 1.08;
-      letter-spacing: -.02em; color: var(--text);
-      margin-bottom: 24px;
-    }
-    h1 em { font-style: italic; color: var(--blue); }
-    .hero-sub {
-      font-size: 17px; color: var(--text-2);
-      line-height: 1.7; max-width: 480px;
-      margin-bottom: 36px;
-    }
-    .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
-    .hero-trust {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 13px; color: var(--text-3);
-    }
-    .hero-trust-dot { width: 3px; height: 3px; background: var(--text-3); border-radius: 50%; }
-
-    /* Scan widget */
-    .scan-widget {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      position: relative;
-      top: 0;
-    }
-    .scan-widget-header {
-      padding: 20px 24px 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    .scan-widget-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-    .scan-widget-sub { font-size: 12px; color: var(--text-3); }
-    .scan-form { padding: 20px 24px; }
-    .scan-input-wrap {
-      display: flex; border: 1px solid var(--border); border-radius: 8px;
-      overflow: hidden; margin-bottom: 12px;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    .scan-input-wrap:focus-within {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(27,79,216,.12);
-    }
-    .scan-input {
-      flex: 1; padding: 11px 14px; border: none; outline: none;
-      font-family: var(--font-body); font-size: 14px;
-      background: transparent; color: var(--text);
-    }
-    .scan-input::placeholder { color: var(--text-3); }
-    .scan-submit {
-      padding: 11px 18px; background: var(--blue); color: #fff;
-      border: none; font-family: var(--font-body); font-size: 13px;
-      font-weight: 600; cursor: pointer; transition: background .15s;
-      white-space: nowrap;
-    }
-    .scan-submit:hover { background: var(--blue-dark); }
-    .scan-submit:disabled { opacity: .6; cursor: wait; }
-    .scan-note { font-size: 11px; color: var(--text-3); }
-    .scan-progress {
-      padding: 0 24px 20px;
-      display: none;
-    }
-    .scan-progress.active { display: block; }
-    .progress-label { font-size: 12px; color: var(--text-2); margin-bottom: 8px; display: flex; justify-content: space-between; }
-    .progress-bar { height: 4px; background: var(--bg-subtle); border-radius: 2px; overflow: hidden; }
-    .progress-fill { height: 100%; background: var(--blue); border-radius: 2px; width: 0; transition: width .2s ease; }
-    .scan-results { padding: 0 24px 20px; display: none; }
-    .scan-results.active { display: block; }
-    .result-warning {
-      background: var(--red-bg); border: 1px solid #FCCAC4;
-      border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;
-      font-size: 13px; color: var(--red); font-weight: 500;
-    }
-    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
-    .result-card {
-      background: var(--bg-subtle); border-radius: 8px; padding: 12px 14px;
-    }
-    .result-card-label { font-size: 10px; text-transform: uppercase; letter-spacing: .6px; color: var(--text-3); margin-bottom: 4px; }
-    .result-card-value { font-family: var(--font-display); font-size: 24px; font-weight: 400; line-height: 1; }
-    .result-card-value.bad { color: var(--red); }
-    .result-card-value.warn { color: #92400E; }
-    .result-cta { font-size: 12px; color: var(--text-3); text-align: center; }
-    .result-cta a { color: var(--blue); font-weight: 600; }
-
-    /* ─── LOGOS ───────────────────────────────────────── */
-    .logos-bar {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--bg-white);
-      padding: 20px 32px;
-    }
-    .logos-inner {
-      max-width: 1160px; margin: 0 auto;
-      display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
-    }
-    .logos-label { font-size: 12px; color: var(--text-3); font-weight: 500; white-space: nowrap; }
-    .logos-list { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
-    .logo-pill {
-      font-size: 13px; font-weight: 600; color: var(--text-3);
-      display: flex; align-items: center; gap: 6px;
-      letter-spacing: -.1px;
-    }
-
-    /* ─── STATS ───────────────────────────────────────── */
-    .stats { max-width: 1160px; margin: 0 auto; padding: 72px 32px; }
-    .stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: 14px;
-      overflow: hidden;
-    }
-    .stat-cell {
-      background: var(--bg-white); padding: 32px 28px;
-    }
-    .stat-number {
-      font-family: var(--font-display); font-size: 40px;
-      font-weight: 400; line-height: 1; color: var(--text);
-      margin-bottom: 8px; letter-spacing: -.02em;
-    }
-    .stat-number span { color: var(--blue); }
-    .stat-desc { font-size: 13px; color: var(--text-2); line-height: 1.5; }
-
-    /* ─── SECTION SHARED ──────────────────────────────── */
-    .section { padding: 80px 32px; }
-    .section-inner { max-width: 1160px; margin: 0 auto; }
-    .section-label {
-      font-size: 12px; font-weight: 600; letter-spacing: .7px;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 14px;
-    }
-    h2 {
-      font-family: var(--font-display); font-weight: 400;
-      font-size: clamp(30px, 3.5vw, 44px);
-      line-height: 1.1; letter-spacing: -.02em;
-      color: var(--text); margin-bottom: 16px;
-    }
-    h2 em { font-style: italic; color: var(--blue); }
-    .section-sub { font-size: 16px; color: var(--text-2); max-width: 520px; line-height: 1.7; }
-
-    /* ─── HOW IT WORKS ────────────────────────────────── */
-    .how { background: var(--bg-white); }
-    .how-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 40px; margin-top: 56px;
-    }
-    .how-step { }
-    .how-num {
-      font-family: var(--font-display); font-size: 13px; font-weight: 600;
-      color: var(--blue); margin-bottom: 16px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .how-num::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
-    .how-step:last-child .how-num::after { display: none; }
-    .how-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      border: 1px solid var(--border); background: var(--bg-subtle);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; margin-bottom: 16px;
-    }
-    .how-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-    .how-desc { font-size: 14px; color: var(--text-2); line-height: 1.65; }
-
-    /* ─── AGENCY ──────────────────────────────────────── */
-    .agency-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center; margin-top: 56px;
-    }
-    .agency-body h3 {
-      font-family: var(--font-display); font-size: 26px; font-weight: 400;
-      line-height: 1.2; margin-bottom: 16px; color: var(--text);
-    }
-    .agency-body p { font-size: 15px; color: var(--text-2); line-height: 1.7; margin-bottom: 24px; }
-    .agency-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-    .agency-features li {
-      font-size: 14px; color: var(--text-2); display: flex; align-items: flex-start; gap: 10px;
-    }
-    .agency-features li::before {
-      content: '✓'; color: var(--green); font-weight: 700; font-size: 13px;
-      flex-shrink: 0; margin-top: 1px;
-    }
-    .agency-calc {
-      background: var(--bg-white); border: 1px solid var(--border);
-      border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md);
-    }
-    .calc-header {
-      padding: 24px 28px; border-bottom: 1px solid var(--border);
-    }
-    .calc-header-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-    .calc-header-sub { font-size: 12px; color: var(--text-3); }
-    .calc-body { padding: 20px 28px; }
-    .calc-slider-row { margin-bottom: 20px; }
-    .calc-slider-label {
-      display: flex; justify-content: space-between;
-      font-size: 13px; color: var(--text-2); margin-bottom: 8px;
-    }
-    .calc-slider-label strong { color: var(--text); font-weight: 600; }
-    input[type=range] {
-      width: 100%; accent-color: var(--blue); cursor: pointer; margin-bottom: 4px;
-    }
-    .calc-rows { display: flex; flex-direction: column; gap: 2px; }
-    .calc-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 10px 14px; background: var(--bg-subtle); border-radius: 6px;
-      font-size: 13px;
-    }
-    .calc-row span:first-child { color: var(--text-2); }
-    .calc-row span:last-child { font-weight: 600; color: var(--text); }
-    .calc-total-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 14px 0; border-top: 1px solid var(--border); margin-top: 12px;
-    }
-    .calc-total-row span:first-child { font-size: 14px; font-weight: 600; color: var(--text); }
-    .calc-total-row span:last-child {
-      font-family: var(--font-display); font-size: 28px;
-      font-weight: 400; color: var(--blue);
-    }
-
-    /* ─── PRICING ─────────────────────────────────────── */
-    .pricing { background: var(--bg-white); }
-    .pricing-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 24px; margin-top: 56px;
-    }
-    .pricing-card {
-      border: 1px solid var(--border); border-radius: 16px;
-      padding: 32px 28px; background: var(--bg-white);
-      position: relative; transition: box-shadow .2s, border-color .2s;
-    }
-    .pricing-card:hover { box-shadow: var(--shadow-md); border-color: #C0BDB7; }
-    .pricing-card.featured {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 1px var(--blue), var(--shadow-md);
-    }
-    .pricing-card.featured:hover { box-shadow: 0 0 0 1px var(--blue), var(--shadow-lg); }
-    .featured-badge {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--blue); color: #fff;
-      font-size: 10px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
-      padding: 4px 12px; border-radius: 100px;
-    }
-    .plan-name { font-size: 13px; font-weight: 600; color: var(--text-2); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 20px; }
-    .plan-price-row { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 6px; }
-    .plan-currency { font-size: 18px; font-weight: 600; color: var(--text); align-self: flex-start; margin-top: 10px; }
-    .plan-price { font-family: var(--font-display); font-size: 52px; font-weight: 400; line-height: 1; color: var(--text); letter-spacing: -.02em; }
-    .plan-period { font-size: 13px; color: var(--text-3); margin-bottom: 4px; }
-    .plan-desc { font-size: 13px; color: var(--text-2); margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
-    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .plan-features li { font-size: 14px; color: var(--text-2); display: flex; gap: 10px; align-items: flex-start; }
-    .plan-features li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+    .btn-outline { background: var(--bg-white); color: var(--text); border-color: var(--border); box-shadow: var(--sh-sm); }
+    .btn-outline:hover { border-color: var(--border-2); box-shadow: var(--sh-md); }
+    .btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 1px 2px rgba(26,78,216,.2), inset 0 1px 0 rgba(255,255,255,.06); }
+    .btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(26,78,216,.28); }
+    .btn-primary:active { transform: none; }
+    .btn-white { background: #fff; color: var(--text); border-color: rgba(255,255,255,.2); }
+    .btn-white:hover { background: #F5F5F5; }
+    .btn-dark-outline { background: transparent; color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.22); }
+    .btn-dark-outline:hover { color: #fff; border-color: rgba(255,255,255,.45); }
     .btn-full { width: 100%; }
 
-    /* ─── LEGAL ───────────────────────────────────────── */
-    .legal-banner {
-      max-width: 1160px; margin: 0 auto;
-      padding: 0 32px 72px;
+    /* ── HERO ── */
+    .hero-wrap { border-bottom: 1px solid var(--border); }
+    .hero {
+      max-width: 1160px; margin: 0 auto; padding: 86px 32px 80px;
+      display: grid; grid-template-columns: 1fr 400px; gap: 72px; align-items: start;
     }
-    .legal-inner {
-      background: var(--bg-white); border: 1px solid #FCCAC4;
-      border-radius: 12px; padding: 20px 24px;
-      display: flex; gap: 16px; align-items: flex-start;
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11.5px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase;
+      color: var(--blue); background: var(--blue-light); border: 1px solid var(--blue-border);
+      padding: 5px 12px; border-radius: 100px; margin-bottom: 22px;
     }
-    .legal-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-    .legal-text { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+    .hero-tag-dot { width: 5px; height: 5px; background: var(--blue); border-radius: 50%; animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+    h1 { font-family: var(--ff-display); font-size: clamp(38px, 4.2vw, 56px); font-weight: 400; line-height: 1.07; letter-spacing: -.025em; color: var(--text); margin-bottom: 22px; }
+    h1 em { font-style: italic; color: var(--blue); }
+    .hero-desc { font-size: 17px; color: var(--text-2); line-height: 1.72; max-width: 460px; margin-bottom: 34px; }
+    .hero-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-meta { display: flex; align-items: center; gap: 5px; font-size: 13px; color: var(--text-3); flex-wrap: wrap; }
+    .sep { width: 3px; height: 3px; background: var(--text-3); border-radius: 50%; flex-shrink: 0; }
+
+    /* ── SCAN CARD ── */
+    .scan-card { background: var(--bg-white); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--sh-lg); overflow: hidden; }
+    .scan-card-head { padding: 18px 22px; border-bottom: 1px solid var(--border); }
+    .scan-card-title { font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .scan-card-sub { font-size: 12px; color: var(--text-3); }
+    .scan-body { padding: 18px 22px; }
+    .scan-field { display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color .14s, box-shadow .14s; margin-bottom: 10px; }
+    .scan-field:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,78,216,.1); }
+    .scan-input { flex: 1; padding: 10px 13px; border: none; outline: none; font-family: var(--ff-body); font-size: 14px; color: var(--text); background: transparent; }
+    .scan-input::placeholder { color: var(--text-3); }
+    .scan-btn { padding: 10px 16px; background: var(--blue); color: #fff; border: none; font-family: var(--ff-body); font-size: 13px; font-weight: 600; cursor: pointer; transition: background .14s; white-space: nowrap; }
+    .scan-btn:hover:not(:disabled) { background: var(--blue-dark); }
+    .scan-btn:disabled { opacity: .6; cursor: wait; }
+    .scan-hint { font-size: 11.5px; color: var(--text-3); }
+    .scan-progress-wrap { padding: 0 22px 18px; display: none; }
+    .scan-progress-wrap.show { display: block; }
+    .scan-progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-2); margin-bottom: 7px; }
+    .scan-bar { height: 3px; background: var(--bg-subtle); border-radius: 2px; overflow: hidden; }
+    .scan-fill { height: 100%; background: var(--blue); border-radius: 2px; width: 0; transition: width .18s ease; }
+    .scan-result-wrap { padding: 0 22px 20px; display: none; }
+    .scan-result-wrap.show { display: block; }
+    .scan-alert { background: var(--red-bg); border: 1px solid var(--red-border); border-radius: 7px; padding: 11px 14px; font-size: 13px; color: var(--red); font-weight: 500; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .scan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 14px; }
+    .scan-cell { background: var(--bg-subtle); border-radius: 7px; padding: 11px 13px; }
+    .scan-cell-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .5px; color: var(--text-3); margin-bottom: 5px; }
+    .scan-cell-val { font-family: var(--ff-display); font-size: 22px; font-weight: 400; line-height: 1; }
+    .val-red { color: var(--red); }
+    .val-amber { color: var(--amber); }
+    .scan-cta-note { font-size: 12px; color: var(--text-3); text-align: center; }
+    .scan-cta-note a { color: var(--blue); font-weight: 600; }
+
+    /* ── LOGOS ── */
+    .logos { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-white); padding: 18px 32px; }
+    .logos-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
+    .logos-label { font-size: 12px; color: var(--text-3); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+    .logos-list { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .logo-item { font-size: 13px; font-weight: 600; color: var(--text-3); letter-spacing: -.1px; }
+
+    /* ── STATS ── */
+    .stats-section { padding: 72px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .stat-cell { background: var(--bg-white); padding: 30px 26px; }
+    .stat-num { font-family: var(--ff-display); font-size: 38px; font-weight: 400; line-height: 1; color: var(--text); margin-bottom: 9px; letter-spacing: -.02em; }
+    .stat-num span { color: var(--blue); }
+    .stat-desc { font-size: 13px; color: var(--text-2); line-height: 1.55; }
+
+    /* ── SECTION SHARED ── */
+    .section { padding: 80px 0; }
+    .section-label { font-size: 11.5px; font-weight: 600; letter-spacing: .7px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    h2 { font-family: var(--ff-display); font-weight: 400; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.1; letter-spacing: -.022em; color: var(--text); margin-bottom: 14px; }
+    h2 em { font-style: italic; color: var(--blue); }
+    .section-desc { font-size: 16px; color: var(--text-2); line-height: 1.72; max-width: 500px; }
+    .bg-white { background: var(--bg-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    /* ── HOW ── */
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 52px; }
+    .how-cell { background: var(--bg-white); padding: 30px 26px; }
+    .how-step-num { font-size: 11px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    .how-step-num::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .how-step-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--bg-subtle); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .how-step-title { font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 9px; }
+    .how-step-desc { font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
+
+    /* ── AGENCY SECTION ── */
+    .agency-section { padding: 80px 0; }
+    .agency-intro { text-align: center; max-width: 560px; margin: 0 auto 60px; }
+    .agency-intro .section-label { margin-bottom: 14px; }
+    .agency-intro h2 { margin-bottom: 14px; }
+    .agency-intro p { font-size: 16px; color: var(--text-2); line-height: 1.7; }
+    .agency-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .agency-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+    .agency-features li { font-size: 14px; color: var(--text-2); display: flex; align-items: flex-start; gap: 10px; }
+    .check { flex-shrink: 0; margin-top: 1px; }
+    .agency-note { font-size: 13px; color: var(--text-3); margin-top: 16px; }
+    .agency-note a { color: var(--blue); font-weight: 600; }
+
+    /* Calc card */
+    .calc-card { background: var(--bg-white); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--sh-md); overflow: hidden; }
+    .calc-head { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+    .calc-head-title { font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .calc-head-sub { font-size: 12px; color: var(--text-3); }
+    .calc-body { padding: 20px 24px; }
+    .calc-slider-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-2); margin-bottom: 8px; }
+    .calc-slider-label strong { color: var(--text); font-weight: 600; }
+    input[type=range] { width: 100%; accent-color: var(--blue); cursor: pointer; margin-bottom: 20px; }
+    .calc-rows { display: flex; flex-direction: column; gap: 2px; margin-bottom: 16px; }
+    .calc-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 13px; background: var(--bg-subtle); border-radius: 7px; font-size: 13px; }
+    .calc-row span:first-child { color: var(--text-2); }
+    .calc-row span:last-child { font-weight: 600; color: var(--text); }
+    .calc-result { border-top: 1px solid var(--border); padding-top: 16px; display: flex; justify-content: space-between; align-items: baseline; }
+    .calc-result-label { font-size: 14px; font-weight: 600; color: var(--text); }
+    .calc-result-val { font-family: var(--ff-display); font-size: 30px; font-weight: 400; color: var(--blue); }
+    .calc-threshold { margin-top: 12px; font-size: 12px; color: var(--text-3); background: var(--bg-subtle); border-radius: 6px; padding: 9px 12px; line-height: 1.5; }
+
+    /* ── PRICING ── */
+    .pricing-section { padding: 80px 0; }
+    .pricing-header { margin-bottom: 52px; }
+    .pricing-tabs { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+    .pricing-tab { font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 100px; border: 1px solid var(--border); background: var(--bg-white); color: var(--text-2); cursor: pointer; transition: all .14s; }
+    .pricing-tab.active { background: var(--text); color: #fff; border-color: var(--text); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .plan-card { background: var(--bg-white); padding: 36px 30px; position: relative; transition: background .15s; }
+    .plan-card.featured { background: #FAFEFF; }
+    .plan-badge { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; padding: 4px 12px; border-radius: 0 0 7px 7px; }
+    .plan-for { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; color: var(--text-3); background: var(--bg-subtle); border-radius: 100px; padding: 3px 10px; margin-bottom: 14px; }
+    .plan-for.agency { color: var(--blue); background: var(--blue-light); }
+    .plan-name { font-size: 13px; font-weight: 600; color: var(--text-2); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 18px; }
+    .plan-price-row { display: flex; align-items: flex-end; gap: 2px; margin-bottom: 5px; }
+    .plan-currency { font-size: 17px; font-weight: 600; color: var(--text); align-self: flex-start; margin-top: 11px; }
+    .plan-price { font-family: var(--ff-display); font-size: 50px; font-weight: 400; line-height: 1; color: var(--text); letter-spacing: -.02em; }
+    .plan-period { font-size: 13px; color: var(--text-3); margin-bottom: 5px; }
+    .plan-desc { font-size: 13px; color: var(--text-2); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); line-height: 1.6; }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 26px; }
+    .plan-features li { font-size: 13.5px; color: var(--text-2); display: flex; gap: 9px; align-items: flex-start; }
+
+    /* ── LEGAL ── */
+    .legal-wrap { padding-bottom: 64px; }
+    .legal-box { background: var(--bg-white); border: 1px solid var(--red-border); border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; max-width: 900px; }
+    .legal-icon-wrap { flex-shrink: 0; margin-top: 1px; }
+    .legal-text { font-size: 13px; color: var(--text-2); line-height: 1.65; }
     .legal-text strong { color: var(--red); }
 
-    /* ─── CTA BAND ────────────────────────────────────── */
-    .cta-band {
-      background: var(--text); padding: 80px 32px;
-    }
-    .cta-inner {
-      max-width: 700px; margin: 0 auto; text-align: center;
-    }
-    .cta-inner h2 { color: #fff; }
-    .cta-inner h2 em { color: #93AAEF; }
-    .cta-sub { font-size: 16px; color: rgba(255,255,255,.55); margin: 16px auto 36px; max-width: 480px; line-height: 1.7; }
-    .cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-    .btn-white { background: #fff; color: var(--text); }
-    .btn-white:hover { background: #F3F4F6; box-shadow: var(--shadow-sm); }
-    .btn-dark-outline { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2); }
-    .btn-dark-outline:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+    /* ── CTA BAND ── */
+    .cta-band { background: var(--text); padding: 80px 0; }
+    .cta-inner { max-width: 640px; margin: 0 auto; text-align: center; padding: 0 32px; }
+    .cta-inner h2 { color: #fff; margin-bottom: 14px; }
+    .cta-inner h2 em { color: #8AABF7; }
+    .cta-sub { font-size: 16px; color: rgba(255,255,255,.5); margin-bottom: 32px; line-height: 1.7; }
+    .cta-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 
-    /* ─── FOOTER ──────────────────────────────────────── */
-    footer {
-      background: var(--bg-white);
-      border-top: 1px solid var(--border);
-      padding: 32px;
-    }
-    .footer-inner {
-      max-width: 1160px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    .footer-logo { font-family: var(--font-display); font-size: 16px; color: var(--text-2); }
-    .footer-logo span { color: var(--blue); }
-    .footer-copy { font-size: 13px; color: var(--text-3); }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 13px; color: var(--text-3); transition: color .15s; }
-    .footer-links a:hover { color: var(--text-2); }
+    /* ── FOOTER ── */
+    footer { background: var(--bg-white); border-top: 1px solid var(--border); }
+    .footer-top { max-width: 1160px; margin: 0 auto; padding: 40px 32px 28px; display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand { }
+    .footer-logo { font-family: var(--ff-display); font-size: 16px; color: var(--text-2); margin-bottom: 10px; }
+    .footer-logo strong { color: var(--blue); font-weight: 400; }
+    .footer-tagline { font-size: 12.5px; color: var(--text-3); line-height: 1.6; }
+    .footer-col h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; color: var(--text-3); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul li a { font-size: 13.5px; color: var(--text-2); transition: color .12s; }
+    .footer-col ul li a:hover { color: var(--text); }
+    .footer-bottom { max-width: 1160px; margin: 0 auto; padding: 18px 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 12.5px; color: var(--text-3); }
 
-    /* ─── RESPONSIVE ──────────────────────────────────── */
-    @media (max-width: 960px) {
+    /* ── CONTACT MODAL ── */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--bg-white); border-radius: 16px; width: 100%; max-width: 480px; box-shadow: var(--sh-lg); overflow: hidden; }
+    .modal-head { padding: 24px 28px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; }
+    .modal-title { font-family: var(--ff-display); font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 4px; }
+    .modal-sub { font-size: 13px; color: var(--text-2); }
+    .modal-close { background: none; border: none; font-size: 18px; color: var(--text-3); cursor: pointer; padding: 2px; line-height: 1; }
+    .modal-close:hover { color: var(--text); }
+    .modal-body { padding: 24px 28px; }
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .form-input { width: 100%; padding: 10px 13px; border: 1px solid var(--border); border-radius: 8px; font-family: var(--ff-body); font-size: 14px; color: var(--text); background: var(--bg-white); outline: none; transition: border-color .14s, box-shadow .14s; }
+    .form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,78,216,.1); }
+    .form-input::placeholder { color: var(--text-3); }
+    select.form-input { cursor: pointer; }
+    .form-submit { width: 100%; margin-top: 8px; }
+    .form-note { font-size: 12px; color: var(--text-3); text-align: center; margin-top: 12px; }
+    .form-success { text-align: center; padding: 20px 0; display: none; }
+    .form-success-title { font-family: var(--ff-display); font-size: 20px; color: var(--text); margin-bottom: 8px; }
+    .form-success-sub { font-size: 14px; color: var(--text-2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
       .hero { grid-template-columns: 1fr; gap: 48px; }
-      .scan-widget { max-width: 480px; }
-      .how-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .scan-card { max-width: 480px; }
       .agency-grid { grid-template-columns: 1fr; gap: 48px; }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .how-grid { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .nav-links { display: none; }
-      .nav-inner { padding: 0 20px; }
-      .hero { padding: 56px 20px 48px; }
-      .section { padding: 56px 20px; }
+      .nav-inner, .container { padding-left: 20px; padding-right: 20px; }
+      .hero { padding: 52px 20px 48px; }
+      .section, .agency-section, .pricing-section, .stats-section { padding: 56px 0; }
+      .section .container { padding-left: 20px; padding-right: 20px; }
       .how-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr; }
-      .logos-bar { padding: 16px 20px; }
-      .legal-banner { padding: 0 20px 48px; }
-      h1 { font-size: 36px; }
+      .logos { padding: 16px 20px; }
+      .footer-top { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; }
+      .footer-bottom { padding: 16px 20px; }
     }
-
-    /* ─── ANIMATIONS ──────────────────────────────────── */
-    .fade-up {
-      opacity: 0; transform: translateY(18px);
-      transition: opacity .5s ease, transform .5s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">Prendre contact</div>
+        <div class="modal-sub">Nous revenons sous 24h ouvrées.</div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div id="formWrap">
+        <div class="form-group">
+          <label class="form-label">Prénom et nom</label>
+          <input type="text" class="form-input" id="f-name" placeholder="Marie Dupont" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Adresse email professionnelle</label>
+          <input type="email" class="form-input" id="f-email" placeholder="marie@agence.fr" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Vous êtes</label>
+          <select class="form-input" id="f-type">
+            <option value="">Sélectionner</option>
+            <option value="agence">Une agence e-commerce</option>
+            <option value="marchand">Un marchand indépendant</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nombre de boutiques à auditer</label>
+          <input type="text" class="form-input" id="f-shops" placeholder="Ex : 12 boutiques WooCommerce" />
+        </div>
+        <button class="btn btn-primary btn-lg btn-full form-submit" onclick="submitForm()">Envoyer la demande</button>
+        <div class="form-note">Aucun engagement. Réponse sous 24h.</div>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-title">Demande reçue.</div>
+        <div class="form-success-sub">Nous vous recontactons sous 24h ouvrées à l'adresse indiquée.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="/">Checkout<span>Proof</span></a>
+    <a class="nav-logo" href="/">Checkout<strong>Proof</strong></a>
     <ul class="nav-links">
       <li><a href="#how">Fonctionnement</a></li>
       <li><a href="#agencies">Agences</a></li>
       <li><a href="#pricing">Tarifs</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="#pricing" class="btn btn-sm btn-ghost">Se connecter</a>
-      <a href="#scan" class="btn btn-sm btn-primary">Audit gratuit</a>
+    <div class="nav-right">
+      <button class="btn btn-sm btn-ghost" onclick="openModal()">Contact</button>
+      <button class="btn btn-sm btn-primary" onclick="openModal()">Audit gratuit</button>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section>
-  <div class="hero" id="scan">
-    <div class="hero-left fade-up">
-      <div class="hero-eyebrow">European Accessibility Act — En vigueur depuis juin 2025</div>
+<div class="hero-wrap">
+  <div class="hero" id="top">
+    <div class="fade">
+      <div class="hero-tag"><span class="hero-tag-dot"></span>European Accessibility Act — en vigueur depuis juin 2025</div>
       <h1>Votre boutique<br>passe-t-elle<br>le test <em>EAA&nbsp;?</em></h1>
-      <p class="hero-sub">
-        51 erreurs d'accessibilité en moyenne par boutique e-commerce. 
-        CheckoutProof audite, surveille et prouve votre conformité — automatiquement.
-      </p>
+      <p class="hero-desc">51 erreurs d'accessibilité en moyenne par boutique e-commerce. CheckoutProof audite, surveille et prouve votre conformité — automatiquement.</p>
       <div class="hero-actions">
-        <a href="#scan" class="btn btn-lg btn-primary">Lancer un audit gratuit</a>
-        <a href="#agencies" class="btn btn-lg btn-outline">Voir la solution agences →</a>
+        <button class="btn btn-lg btn-primary" onclick="openModal()">Demander un audit gratuit</button>
+        <a href="#agencies" class="btn btn-lg btn-outline">Solution agences</a>
       </div>
-      <div class="hero-trust">
-        <span>Aucune CB requise</span>
-        <span class="hero-trust-dot"></span>
+      <div class="hero-meta">
+        <span>Sans engagement</span>
+        <span class="sep"></span>
         <span>Résultat en 60 secondes</span>
-        <span class="hero-trust-dot"></span>
+        <span class="sep"></span>
         <span>WooCommerce · Shopify · PrestaShop</span>
       </div>
     </div>
 
-    <div class="scan-widget fade-up" style="animation-delay:.1s">
-      <div class="scan-widget-header">
-        <div class="scan-widget-title">Audit d'accessibilité gratuit</div>
-        <div class="scan-widget-sub">Entrez l'URL de votre boutique pour obtenir un score EAA instantané</div>
+    <div class="scan-card fade" style="transition-delay:.1s">
+      <div class="scan-card-head">
+        <div class="scan-card-title">Audit d'accessibilité gratuit</div>
+        <div class="scan-card-sub">Entrez l'URL de votre boutique pour recevoir un score EAA instantané</div>
       </div>
-      <div class="scan-form">
-        <div class="scan-input-wrap">
+      <div class="scan-body">
+        <div class="scan-field">
           <input class="scan-input" id="urlInput" type="url" placeholder="https://votre-boutique.com" />
-          <button class="scan-submit" id="scanBtn" onclick="startScan()">Analyser →</button>
+          <button class="scan-btn" id="scanBtn" onclick="startScan()">Analyser</button>
         </div>
-        <div class="scan-note">6 pages auditées : accueil, catégorie, produit, panier, checkout, compte</div>
+        <div class="scan-hint">6 pages auditées : accueil · catégorie · produit · panier · checkout · compte</div>
       </div>
-      <div class="scan-progress" id="scanProgress">
-        <div class="progress-label">
+      <div class="scan-progress-wrap" id="scanProgress">
+        <div class="scan-progress-label">
           <span id="progressLabel">Crawl des pages en cours…</span>
-          <span id="progressPct">0%</span>
+          <span id="progressPct">0 %</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="scan-bar"><div class="scan-fill" id="progressFill"></div></div>
       </div>
-      <div class="scan-results" id="scanResults">
-        <div class="result-warning">⚠ Boutique non conforme — corrections requises avant inspection</div>
-        <div class="result-grid">
-          <div class="result-card">
-            <div class="result-card-label">Score global</div>
-            <div class="result-card-value bad">38<span style="font-size:18px">/100</span></div>
+      <div class="scan-result-wrap" id="scanResults">
+        <div class="scan-alert">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1L13.5 11.5H1.5L7.5 1Z" stroke="#B91C1C" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.5 6V8.5" stroke="#B91C1C" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="10.5" r=".75" fill="#B91C1C"/></svg>
+          Boutique non conforme — corrections requises
+        </div>
+        <div class="scan-grid">
+          <div class="scan-cell">
+            <div class="scan-cell-label">Score global</div>
+            <div class="scan-cell-val val-red">38<span style="font-size:16px">/100</span></div>
           </div>
-          <div class="result-card">
-            <div class="result-card-label">Erreurs critiques</div>
-            <div class="result-card-value bad">24</div>
+          <div class="scan-cell">
+            <div class="scan-cell-label">Erreurs critiques</div>
+            <div class="scan-cell-val val-red">24</div>
           </div>
-          <div class="result-card">
-            <div class="result-card-label">Score checkout</div>
-            <div class="result-card-value warn">51<span style="font-size:18px">/100</span></div>
+          <div class="scan-cell">
+            <div class="scan-cell-label">Score checkout</div>
+            <div class="scan-cell-val val-amber">51<span style="font-size:16px">/100</span></div>
           </div>
-          <div class="result-card">
-            <div class="result-card-label">Conformité EAA</div>
-            <div class="result-card-value bad" style="font-size:16px;margin-top:4px">Non conforme</div>
+          <div class="scan-cell">
+            <div class="scan-cell-label">Statut EAA</div>
+            <div class="scan-cell-val val-red" style="font-size:15px;margin-top:3px">Non conforme</div>
           </div>
         </div>
-        <div class="result-cta">Rapport complet disponible après inscription — <a href="#pricing">gratuit 14 jours</a></div>
+        <div class="scan-cta-note">Rapport complet disponible après inscription — <a href="javascript:void(0)" onclick="closeModal();openModal()">gratuit, sans engagement</a></div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- LOGOS -->
-<div class="logos-bar">
+<div class="logos">
   <div class="logos-inner">
     <span class="logos-label">Compatible avec</span>
     <div class="logos-list">
-      <span class="logo-pill">🟣 WooCommerce</span>
-      <span class="logo-pill">🟢 Shopify</span>
-      <span class="logo-pill">🔵 PrestaShop</span>
-      <span class="logo-pill">⚫ Magento</span>
-      <span class="logo-pill">🟠 Wix eCommerce</span>
+      <span class="logo-item">WooCommerce</span>
+      <span class="logo-item">Shopify</span>
+      <span class="logo-item">PrestaShop</span>
+      <span class="logo-item">Magento</span>
+      <span class="logo-item">Wix eCommerce</span>
     </div>
   </div>
 </div>
 
 <!-- STATS -->
-<section>
-  <div class="stats">
-    <div class="stats-grid fade-up">
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid fade">
       <div class="stat-cell">
-        <div class="stat-number">50<span>.9M</span></div>
-        <div class="stat-desc">erreurs d'accessibilité détectées sur 1 million de sites analysés (WebAIM 2025)</div>
+        <div class="stat-num">50<span>.9M</span></div>
+        <div class="stat-desc">erreurs d'accessibilité détectées sur 1 million de sites analysés — WebAIM 2025</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-number"><span>28</span> juin</div>
-        <div class="stat-desc">2025 — date d'entrée en vigueur de l'EAA pour le commerce en ligne européen</div>
+        <div class="stat-num"><span>28</span> juin <span>2025</span></div>
+        <div class="stat-desc">date d'entrée en vigueur de l'EAA pour les boutiques e-commerce européennes</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-number">4<span>M+</span></div>
-        <div class="stat-desc">boutiques WooCommerce dans le scope de la directive, auxquelles s'ajoutent 250 000 sites PrestaShop</div>
+        <div class="stat-num">4<span>M+</span></div>
+        <div class="stat-desc">boutiques WooCommerce dans le périmètre de la directive, et 250 000 sites PrestaShop</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-number">51</div>
-        <div class="stat-desc">erreurs détectables en moyenne par page — dont la majorité sur le checkout et les formulaires</div>
+        <div class="stat-num">51</div>
+        <div class="stat-desc">erreurs détectables en moyenne par page, dont la majorité sur le checkout et les formulaires</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section how" id="how">
-  <div class="section-inner">
-    <div class="section-label fade-up">Fonctionnement</div>
-    <h2 class="fade-up">De l'audit à la <em>preuve</em> de conformité</h2>
-    <p class="section-sub fade-up">Pas de widget magique. Un audit réel des pages qui comptent, des correctifs actionnables et un monitoring qui détecte les régressions avant vos clients.</p>
+<section class="section bg-white" id="how">
+  <div class="container">
+    <div class="section-label fade">Fonctionnement</div>
+    <h2 class="fade">De l'audit à la <em>preuve</em> de conformité</h2>
+    <p class="section-desc fade">Pas de widget générique. Un audit réel des pages critiques, des tickets actionnables et un monitoring qui détecte les régressions avant vos clients.</p>
     <div class="how-grid">
-      <div class="how-step fade-up">
-        <div class="how-num">01</div>
-        <div class="how-icon">🔍</div>
-        <div class="how-title">Scan automatique</div>
-        <div class="how-desc">On crawle vos 6 pages critiques — accueil, catégorie, fiche produit, panier, checkout, compte — avec Playwright et axe-core.</div>
+      <div class="how-cell fade">
+        <div class="how-step-num">01</div>
+        <div class="how-step-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="#6A6860" stroke-width="1.5"/><path d="M10.5 10.5L13.5 13.5" stroke="#6A6860" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="how-step-title">Scan automatique</div>
+        <div class="how-step-desc">On crawle vos 6 pages critiques — accueil, catégorie, produit, panier, checkout et compte — avec Playwright et axe-core.</div>
       </div>
-      <div class="how-step fade-up" style="animation-delay:.08s">
-        <div class="how-num">02</div>
-        <div class="how-icon">📊</div>
-        <div class="how-title">Score par page</div>
-        <div class="how-desc">Chaque page reçoit un score EAA avec gravité et capture annotée. Les erreurs sont regroupées par type pour faciliter les corrections.</div>
+      <div class="how-cell fade" style="transition-delay:.07s">
+        <div class="how-step-num">02</div>
+        <div class="how-step-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="10" width="3" height="4" rx="1" stroke="#6A6860" stroke-width="1.5"/><rect x="6.5" y="6" width="3" height="8" rx="1" stroke="#6A6860" stroke-width="1.5"/><rect x="11" y="2" width="3" height="12" rx="1" stroke="#6A6860" stroke-width="1.5"/></svg>
+        </div>
+        <div class="how-step-title">Score par page</div>
+        <div class="how-step-desc">Chaque page reçoit un score EAA avec niveau de gravité et capture d'écran annotée. Les erreurs sont regroupées par type.</div>
       </div>
-      <div class="how-step fade-up" style="animation-delay:.16s">
-        <div class="how-num">03</div>
-        <div class="how-icon">📋</div>
-        <div class="how-title">Tickets actionnables</div>
-        <div class="how-desc">Le rapport contient des tickets prêts à envoyer à votre développeur. Plus besoin d'interpréter — chaque erreur a sa correction documentée.</div>
+      <div class="how-cell fade" style="transition-delay:.14s">
+        <div class="how-step-num">03</div>
+        <div class="how-step-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="2" width="10" height="12" rx="2" stroke="#6A6860" stroke-width="1.5"/><path d="M6 6h4M6 9h3" stroke="#6A6860" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="how-step-title">Tickets actionnables</div>
+        <div class="how-step-desc">Le rapport contient des tickets prêts à transmettre à votre développeur. Chaque erreur a sa correction documentée.</div>
       </div>
-      <div class="how-step fade-up" style="animation-delay:.24s">
-        <div class="how-num">04</div>
-        <div class="how-icon">🔔</div>
-        <div class="how-title">Surveillance continue</div>
-        <div class="how-desc">Chaque mise à jour de thème ou plugin peut tout casser. On détecte les régressions et vous alertez avant qu'un client ou une autorité ne le fasse.</div>
+      <div class="how-cell fade" style="transition-delay:.21s">
+        <div class="how-step-num">04</div>
+        <div class="how-step-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v2M8 11v2M3 8H1M15 8h-2M4.93 4.93 3.51 3.51M12.49 12.49l-1.42-1.42M4.93 11.07l-1.42 1.42M12.49 3.51l-1.42 1.42" stroke="#6A6860" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" stroke="#6A6860" stroke-width="1.5"/></svg>
+        </div>
+        <div class="how-step-title">Surveillance continue</div>
+        <div class="how-step-desc">Chaque mise à jour de thème ou plugin peut tout casser. On détecte les régressions et vous alertons avant qu'un tiers ne le fasse.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- AGENCY -->
-<section class="section" id="agencies">
-  <div class="section-inner">
+<section class="agency-section" id="agencies">
+  <div class="container">
+    <div class="agency-intro fade">
+      <div class="section-label">Solution agences</div>
+      <h2>Vous gérez plusieurs boutiques clientes ?</h2>
+      <p>CheckoutProof est conçu pour les agences e-commerce qui veulent proposer la conformité EAA comme service récurrent — avec leur propre marque, un seul dashboard, une facturation unifiée.</p>
+    </div>
     <div class="agency-grid">
-      <div class="agency-body fade-up">
-        <div class="section-label">Solution agences</div>
-        <h2>Un dashboard.<br><em>Toutes vos boutiques.</em></h2>
-        <p>Proposez la conformité EAA comme service récurrent à vos clients e-commerce. Rapports sous votre marque, alertes temps réel, facturation unifiée.</p>
+      <div class="fade">
         <ul class="agency-features">
-          <li>Dashboard white-label à votre marque</li>
-          <li>Gestion centralisée de 10 boutiques et plus</li>
-          <li>Rapports PDF prêts à envoyer à vos clients</li>
-          <li>Alertes automatiques après chaque mise à jour</li>
-          <li>Accès API pour intégration dans votre workflow</li>
-          <li>Support prioritaire et onboarding dédié</li>
+          <li>
+            <svg class="check" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7.5" fill="#F0FDF4"/><path d="M4.5 7.5l2 2 4-4" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Dashboard centralisé à votre marque — logo, couleurs, domaine custom
+          </li>
+          <li>
+            <svg class="check" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7.5" fill="#F0FDF4"/><path d="M4.5 7.5l2 2 4-4" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Gestion de 10 boutiques et plus depuis une interface unique
+          </li>
+          <li>
+            <svg class="check" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7.5" fill="#F0FDF4"/><path d="M4.5 7.5l2 2 4-4" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Rapports PDF prêts à envoyer à chaque client, à votre marque
+          </li>
+          <li>
+            <svg class="check" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7.5" fill="#F0FDF4"/><path d="M4.5 7.5l2 2 4-4" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Alertes automatiques après chaque mise à jour de thème ou plugin
+          </li>
+          <li>
+            <svg class="check" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7.5" fill="#F0FDF4"/><path d="M4.5 7.5l2 2 4-4" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Accès API pour intégration dans votre stack de reporting
+          </li>
+          <li>
+            <svg class="check" width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7.5" fill="#F0FDF4"/><path d="M4.5 7.5l2 2 4-4" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Onboarding dédié et support prioritaire
+          </li>
         </ul>
-        <a href="#pricing" class="btn btn-md btn-primary">Voir le plan Agence →</a>
+        <button class="btn btn-md btn-primary" onclick="openModal()">Demander une démo agence</button>
+        <div class="agency-note">Vous gérez moins de 3 boutiques ? <a href="#pricing">Le plan Boutique</a> est fait pour vous.</div>
       </div>
-      <div class="agency-calc fade-up" style="animation-delay:.1s">
-        <div class="calc-header">
-          <div class="calc-header-title">Calculez votre marge nette</div>
-          <div class="calc-header-sub">Ajustez le nombre de boutiques clientes</div>
+      <div class="calc-card fade" style="transition-delay:.1s">
+        <div class="calc-head">
+          <div class="calc-head-title">Calculez votre marge nette</div>
+          <div class="calc-head-sub">Ajustez le nombre de boutiques clientes</div>
         </div>
         <div class="calc-body">
-          <div class="calc-slider-row">
-            <div class="calc-slider-label">
-              <span>Boutiques gérées</span>
-              <strong id="sliderVal">20 boutiques</strong>
-            </div>
-            <input type="range" id="shopSlider" min="5" max="60" value="20" step="5" oninput="updateCalc()" />
+          <div class="calc-slider-label">
+            <span>Boutiques gérées</span>
+            <strong id="sliderVal">10 boutiques</strong>
           </div>
+          <input type="range" id="shopSlider" min="7" max="60" value="10" step="1" oninput="updateCalc()" />
           <div class="calc-rows">
             <div class="calc-row">
               <span>Votre coût CheckoutProof</span>
               <span id="calcCost">299 €/mois</span>
             </div>
             <div class="calc-row">
-              <span>Ce que vous facturez (49 €/boutique)</span>
-              <span id="calcRevenue">980 €/mois</span>
+              <span>Vous facturez 49 €/boutique/mois</span>
+              <span id="calcRevenue">490 €/mois</span>
             </div>
           </div>
-          <div class="calc-total-row">
-            <span>Marge nette mensuelle</span>
-            <span id="calcMargin">681 €</span>
+          <div class="calc-result">
+            <span class="calc-result-label">Marge nette mensuelle</span>
+            <span class="calc-result-val" id="calcMargin">191 €</span>
           </div>
+          <div class="calc-threshold" id="calcNote">Rentable dès 7 boutiques clientes. À 20 boutiques : 681 €/mois de marge.</div>
         </div>
       </div>
     </div>
@@ -690,176 +590,204 @@
 </section>
 
 <!-- PRICING -->
-<section class="section pricing" id="pricing">
-  <div class="section-inner">
-    <div class="section-label fade-up">Tarifs</div>
-    <h2 class="fade-up">Simple et <em>prévisible</em></h2>
-    <p class="section-sub fade-up">14 jours d'essai gratuit sur tous les plans. Résiliable à tout moment.</p>
-    <div class="pricing-grid">
+<section class="pricing-section bg-white" id="pricing">
+  <div class="container">
+    <div class="pricing-header fade">
+      <div class="section-label">Tarifs</div>
+      <h2>Simple et <em>prévisible</em></h2>
+      <p class="section-desc">14 jours d'essai gratuit. Résiliable à tout moment, sans frais.</p>
+    </div>
+    <div class="pricing-grid fade">
 
-      <div class="pricing-card fade-up">
+      <div class="plan-card">
+        <div class="plan-for">Marchands</div>
         <div class="plan-name">Boutique</div>
         <div class="plan-price-row">
           <span class="plan-currency">€</span>
           <span class="plan-price">79</span>
         </div>
         <div class="plan-period">par mois · par boutique</div>
-        <div class="plan-desc">Pour un marchand indépendant qui veut être conforme et le prouver.</div>
+        <div class="plan-desc">Pour un marchand qui gère sa propre boutique et veut être conforme EAA.</div>
         <ul class="plan-features">
-          <li>Audit des 6 pages critiques</li>
-          <li>Score EAA détaillé par page</li>
-          <li>Monitoring mensuel automatique</li>
-          <li>Alertes régressions par email</li>
-          <li>Rapport PDF exportable</li>
-          <li>Tickets correctifs inclus</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Audit des 6 pages critiques</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Score EAA détaillé par page</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Monitoring mensuel automatique</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Alertes régressions par email</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Rapport PDF exportable</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tickets correctifs inclus</li>
         </ul>
-        <a href="#" class="btn btn-md btn-outline btn-full">Démarrer — 14 jours gratuits</a>
+        <button class="btn btn-md btn-outline btn-full" onclick="openModal()">Démarrer — 14 jours gratuits</button>
       </div>
 
-      <div class="pricing-card featured fade-up" style="animation-delay:.08s">
-        <div class="featured-badge">Le plus populaire</div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Le plus demandé</div>
+        <div class="plan-for agency">Agences e-commerce</div>
         <div class="plan-name">Agence</div>
         <div class="plan-price-row">
           <span class="plan-currency">€</span>
           <span class="plan-price">299</span>
         </div>
-        <div class="plan-period">par mois · jusqu'à 10 boutiques</div>
-        <div class="plan-desc">Pour les agences e-commerce qui gèrent plusieurs boutiques clientes.</div>
+        <div class="plan-period">par mois · jusqu'à 10 boutiques clientes</div>
+        <div class="plan-desc">Pour les agences qui gèrent plusieurs boutiques et veulent proposer la conformité EAA comme service.</div>
         <ul class="plan-features">
-          <li>Tout le plan Boutique × 10</li>
-          <li>Dashboard white-label à votre marque</li>
-          <li>Rapports PDF à votre logo</li>
-          <li>Alertes temps réel</li>
-          <li>Accès API complet</li>
-          <li>Support prioritaire et onboarding</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tout le plan Boutique, pour 10 boutiques</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dashboard white-label à votre marque</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Rapports PDF à votre logo</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Alertes temps réel</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Accès API complet</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Onboarding et support prioritaire</li>
         </ul>
-        <a href="#" class="btn btn-md btn-primary btn-full">Demander une démo</a>
+        <button class="btn btn-md btn-primary btn-full" onclick="openModal()">Demander une démo</button>
       </div>
 
-      <div class="pricing-card fade-up" style="animation-delay:.16s">
-        <div class="plan-name">Audit ponctuel</div>
+      <div class="plan-card">
+        <div class="plan-for">Audit ponctuel</div>
+        <div class="plan-name">Audit expert</div>
         <div class="plan-price-row">
           <span class="plan-currency">€</span>
           <span class="plan-price">490</span>
         </div>
         <div class="plan-period">paiement unique</div>
-        <div class="plan-desc">Rapport approfondi avec vérification humaine. Preuve d'effort légale.</div>
+        <div class="plan-desc">Rapport approfondi avec vérification humaine et document de preuve d'effort légal.</div>
         <ul class="plan-features">
-          <li>Audit complet avec vérification humaine</li>
-          <li>Rapport détaillé 30+ pages</li>
-          <li>Tickets de correction priorisés</li>
-          <li>Document de preuve d'effort</li>
-          <li>Appel de restitution 1h inclus</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Audit complet avec vérification humaine</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Rapport structuré 30+ pages</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tickets de correction priorisés</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Document de preuve d'effort</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#15803D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Appel de restitution 1h inclus</li>
         </ul>
-        <a href="#" class="btn btn-md btn-outline btn-full">Commander un audit</a>
+        <button class="btn btn-md btn-outline btn-full" onclick="openModal()">Commander un audit</button>
       </div>
 
+    </div>
+
+    <!-- Legal -->
+    <div class="legal-wrap" style="margin-top:32px">
+      <div class="legal-box fade">
+        <div class="legal-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L16 14.5H2L9 2Z" stroke="#B91C1C" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7.5v3" stroke="#B91C1C" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="12.5" r=".9" fill="#B91C1C"/></svg>
+        </div>
+        <div class="legal-text">
+          <strong>European Accessibility Act — applicable depuis le 28 juin 2025.</strong> Les boutiques e-commerce dépassant les seuils réglementaires s'exposent à des sanctions administratives en cas de non-conformité. Les microentreprises de services sont exemptées, mais pas les marchands en ligne au-delà du seuil légal.
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- LEGAL BANNER -->
-<div class="legal-banner">
-  <div class="legal-inner">
-    <span class="legal-icon">⚖️</span>
-    <div class="legal-text">
-      <strong>European Accessibility Act — applicable depuis le 28 juin 2025.</strong> Les boutiques e-commerce 
-      dépassant les seuils réglementaires s'exposent à des sanctions administratives en cas de non-conformité. 
-      Les microentreprises de services sont exemptées, mais pas les marchands en ligne au-delà du seuil légal.
-    </div>
-  </div>
-</div>
-
 <!-- CTA BAND -->
 <section class="cta-band">
-  <div class="cta-inner fade-up">
-    <h2>Prêt à sécuriser la <em>conformité</em><br>de vos boutiques&nbsp;?</h2>
-    <p class="cta-sub">Rejoignez les agences e-commerce qui font de la conformité EAA un avantage compétitif — pas une contrainte.</p>
+  <div class="cta-inner fade">
+    <h2>Prêt à sécuriser la <em>conformité</em><br>de vos boutiques ?</h2>
+    <p class="cta-sub">Les agences qui intègrent la conformité EAA dans leur offre créent un avantage compétitif durable. Ne laissez pas vos concurrents y arriver en premier.</p>
     <div class="cta-actions">
-      <a href="#scan" class="btn btn-lg btn-white">Lancer un audit gratuit</a>
-      <a href="#agencies" class="btn btn-lg btn-dark-outline">Voir la solution agences</a>
+      <button class="btn btn-xl btn-white" onclick="openModal()">Démarrer gratuitement</button>
+      <a href="#agencies" class="btn btn-xl btn-dark-outline">Solution agences</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <span class="footer-logo">Checkout<span>Proof</span></span>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Checkout<strong>Proof</strong></div>
+      <div class="footer-tagline">Conformité EAA pour boutiques e-commerce. Audit, monitoring, white-label agences.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="#how">Fonctionnement</a></li>
+        <li><a href="#agencies">Solution agences</a></li>
+        <li><a href="#pricing">Tarifs</a></li>
+        <li><a href="javascript:void(0)" onclick="openModal()">Audit gratuit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="mailto:contact@checkoutproof.fr">Documentation API</a></li>
+        <li><a href="mailto:contact@checkoutproof.fr">Guide EAA e-commerce</a></li>
+        <li><a href="mailto:contact@checkoutproof.fr">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:contact@checkoutproof.fr">contact@checkoutproof.fr</a></li>
+        <li><a href="javascript:void(0)" onclick="openModal()">Demander une démo</a></li>
+        <li><a href="mailto:contact@checkoutproof.fr">Partenariats agences</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <span class="footer-copy">© 2025 CheckoutProof. Tous droits réservés.</span>
-    <div class="footer-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">Confidentialité</a>
-      <a href="#">Documentation API</a>
-      <a href="#">Contact</a>
+    <div style="display:flex;gap:20px">
+      <a href="mailto:contact@checkoutproof.fr" style="font-size:12.5px;color:var(--text-3)">Mentions légales</a>
+      <a href="mailto:contact@checkoutproof.fr" style="font-size:12.5px;color:var(--text-3)">Confidentialité</a>
     </div>
   </div>
 </footer>
 
 <script>
+  // Modal
+  function openModal() { document.getElementById('contactModal').classList.add('open'); }
+  function closeModal() { document.getElementById('contactModal').classList.remove('open'); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  function submitForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    if (!name || !email) { alert('Merci de renseigner votre nom et votre email.'); return; }
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    // In production: send to backend / Formspree / etc.
+    // fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(document.querySelector('form')) })
+  }
+
   // Scan simulation
   function startScan() {
     const url = document.getElementById('urlInput').value.trim();
     if (!url) return;
     const btn = document.getElementById('scanBtn');
-    const progress = document.getElementById('scanProgress');
-    const results = document.getElementById('scanResults');
+    const prog = document.getElementById('scanProgress');
+    const res = document.getElementById('scanResults');
     const fill = document.getElementById('progressFill');
-    const label = document.getElementById('progressLabel');
+    const lbl = document.getElementById('progressLabel');
     const pct = document.getElementById('progressPct');
-
-    btn.disabled = true;
-    btn.textContent = 'Analyse…';
-    progress.classList.add('active');
-    results.classList.remove('active');
-
-    const steps = [
-      [15, 'Crawl des 6 pages critiques…'],
-      [38, 'Exécution de axe-core…'],
-      [62, 'Calcul des scores EAA…'],
-      [81, 'Génération du rapport…'],
-      [100, 'Analyse terminée'],
-    ];
+    btn.disabled = true; btn.textContent = 'Analyse…';
+    prog.classList.add('show'); res.classList.remove('show');
+    const steps = [[15,'Crawl des 6 pages critiques…'],[38,'Exécution de axe-core…'],[62,'Calcul des scores EAA…'],[81,'Génération du rapport…'],[100,'Analyse terminée']];
     let i = 0;
     const tick = () => {
-      if (i >= steps.length) {
-        setTimeout(() => {
-          progress.classList.remove('active');
-          results.classList.add('active');
-          btn.disabled = false;
-          btn.textContent = 'Analyser →';
-        }, 400);
-        return;
-      }
+      if (i >= steps.length) { setTimeout(() => { prog.classList.remove('show'); res.classList.add('show'); btn.disabled = false; btn.textContent = 'Analyser'; }, 380); return; }
       const [p, l] = steps[i++];
-      fill.style.width = p + '%';
-      label.textContent = l;
-      pct.textContent = p + '%';
+      fill.style.width = p + '%'; lbl.textContent = l; pct.textContent = p + ' %';
       setTimeout(tick, 520);
     };
     tick();
   }
-  document.getElementById('urlInput').addEventListener('keydown', e => {
-    if (e.key === 'Enter') startScan();
-  });
+  document.getElementById('urlInput').addEventListener('keydown', e => { if (e.key === 'Enter') startScan(); });
 
-  // Agency calculator
+  // Calculator — always positive, min 7 shops
   function updateCalc() {
     const n = parseInt(document.getElementById('shopSlider').value);
-    const cost = 299;
-    const revenue = n * 49;
-    const margin = revenue - cost;
-    document.getElementById('sliderVal').textContent = n + ' boutiques';
+    const cost = 299, revenue = n * 49, margin = revenue - cost;
+    document.getElementById('sliderVal').textContent = n + ' boutique' + (n > 1 ? 's' : '');
     document.getElementById('calcCost').textContent = cost + ' €/mois';
     document.getElementById('calcRevenue').textContent = revenue.toLocaleString('fr-FR') + ' €/mois';
-    document.getElementById('calcMargin').textContent = margin.toLocaleString('fr-FR') + ' €';
+    document.getElementById('calcMargin').textContent = (margin >= 0 ? '' : '− ') + Math.abs(margin).toLocaleString('fr-FR') + ' €';
+    document.getElementById('calcMargin').style.color = margin >= 0 ? 'var(--blue)' : 'var(--red)';
+    document.getElementById('calcNote').textContent = n <= 7
+      ? 'Le seuil de rentabilité est atteint à 7 boutiques clientes.'
+      : 'Rentable dès 7 boutiques. À ' + n + ' boutiques : ' + margin.toLocaleString('fr-FR') + ' €/mois de marge nette.';
   }
 
   // Scroll animations
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
